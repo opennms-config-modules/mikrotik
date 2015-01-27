@@ -1,0 +1,63 @@
+# _TEMPLATE_
+
+OpenNMS configuration for _TEMPLATE_ devices.
+
+## Installation
+
+.Download and install from GitHub
+[source, bash]
+----
+cd $OPENNMS_HOME/etc/modules-available
+git clone https://github.com/opennms-config-modules/_template_.git
+----
+
+### Events
+.Install _Template_ events
+[source, bash]
+----
+cd $OPENNMS_HOME/etc/events
+ln -s ../modules-available/_template_/events/*.xml .
+----
+
+.Include in eventconf.xml
+[source, xml]
+----
+<event-file>events/_template_.events.xml</event-file>
+<event-file>events/_template_.events.xml</event-file>
+<event-file>events/_template_.events.xml</event-file>
+<event-file>events/_template_.events.xml</event-file>
+<event-file>events/_template_.events.xml</event-file>
+<event-file>events/_template_.events.xml</event-file>
+<event-file>events/_template_.events.xml</event-file>
+----
+
+### Datacollection
+
+.Install datacollection configuration
+[source, bash]
+----
+cd $OPENNMS_HOME/etc/datacollection
+ln -s ../modules-available/_template_/datacollection/*.xml .
+----
+
+.Include in datacollection-config.xml
+[source, xml]
+----
+<include-collection dataCollectionGroup="_template_"/>
+----
+
+### Graph report definitions
+
+.Install graph report definitions
+[source, bash]
+----
+cd $OPENNMS_HOME/etc/snmp-graph.properties.d
+ln -s ../modules-available/_template_/graphs/*.properties .
+----
+
+# License & Authors
+
+- Author:: Ronny Trommer (<ronny@opennms.org>)
+
+Licensed under the GNU Affero General Public License 3+.
+You may obtain a copy of the License at http://www.gnu.org/licenses/agpl-3.0.html.
