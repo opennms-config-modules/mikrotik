@@ -32,6 +32,7 @@ cp ${HOME}/opennms-config-workspace/mikrotik/events/*.xml ${OPENNMS_HOME}/etc/ev
 [source, bash]
 ----
 cp ${HOME}/opennms-config-workspace/mikrotik/datacollection/*.xml ${OPENNMS_HOME}/etc/datacollection
+cp ${HOME}/opennms-config-workspace/mikrotik/resource-types.d/*.xml ${OPENNMS_HOME}/etc/resource-types.d
 ----
 
 .Include in datacollection-config.xml

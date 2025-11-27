@@ -1,22 +1,5 @@
 <?xml version="1.0"?>
 <datacollection-group xmlns="https://xmlns.opennms.org/xsd/config/datacollection" name="Mikrotik">
-
-    <!-- Mikrotik Resource Types -->
-
-    <resourceType name="mtxrWlStatIndex" label="Local PtP or SU Interface (Mikrotik)"
-                  resourceLabel="${mtxrWlStatSsid}">
-        <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
-        <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
-    </resourceType>
-
-    <resourceType name="mtxrWlRtabAddr" label="Subscriber or Remote Radio (Mikrotik)"
-                  resourceLabel="SU ${index}">
-        <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
-        <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
-    </resourceType>
-
-    <!-- Mikrotik MIBs -->
-
     <group name="mtxrWlStatIndex" ifType="all">
         <mibObj oid=".1.3.6.1.4.1.14988.1.1.1.1.1.2" instance="mtxrWlStatIndex" alias="mtxrWlStatTxRate"
                 type="Gauge32"/>
@@ -30,7 +13,6 @@
         <mibObj oid=".1.3.6.1.4.1.14988.1.1.1.1.1.7" instance="mtxrWlStatIndex" alias="mtxrWlStatFreq"
                 type="Integer32"/>
     </group>
-
     <group name="mtxrWlRtabAddr" ifType="all">
         <mibObj oid=".1.3.6.1.4.1.14988.1.1.1.2.1.1" instance="mtxrWlRtabAddr" alias="mtxrWlRtabAddr"
                 type="OctetString"/>
@@ -47,7 +29,6 @@
         <mibObj oid=".1.3.6.1.4.1.14988.1.1.1.2.1.8" instance="mtxrWlRtabAddr" alias="mtxrWlRtabTxRate" type="Gauge32"/>
         <mibObj oid=".1.3.6.1.4.1.14988.1.1.1.2.1.9" instance="mtxrWlRtabAddr" alias="mtxrWlRtabRxRate" type="Gauge32"/>
     </group>
-
     <group name="mtxrHealth" ifType="ignore">
         <mibObj oid=".1.3.6.1.4.1.14988.1.1.3.1" instance="0" alias="mtxrHlCoreVolt" type="Integer32"/>
         <mibObj oid=".1.3.6.1.4.1.14988.1.1.3.2" instance="0" alias="mtxrHlThreePtThreeV" type="Integer32"/>
@@ -66,5 +47,4 @@
             <includeGroup>mtxrHealth</includeGroup>
         </collect>
     </systemDef>
-
 </datacollection-group>

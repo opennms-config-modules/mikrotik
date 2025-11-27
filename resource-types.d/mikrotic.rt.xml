@@ -1,0 +1,13 @@
+<resource-types>
+    <resourceType name="mtxrWlStatIndex" label="Local PtP or SU Interface (Mikrotik)"
+                  resourceLabel="${mtxrWlStatSsid}">
+        <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+        <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
+    </resourceType>
+
+    <resourceType name="mtxrWlRtabAddr" label="Subscriber or Remote Radio (Mikrotik)"
+                  resourceLabel="SU ${index}">
+        <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+        <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
+    </resourceType>
+</resource-types>
